@@ -2,8 +2,22 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color:#FDEDED;
+}
+
+header {
+  height: 10vh;
 }
 
 main {
   flex-grow: 1;
+  height: 90vh;
+}
+
+.bg-light-grey{
+  background-color: #ebebeb
+}
+
+.chatbox{
+  height: 20%;
 }
