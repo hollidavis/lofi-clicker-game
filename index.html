@@ -42,39 +42,111 @@
   </header>
   <main class="container-fluid">
     <div class="row align-items-center h-100">
+      <!-- Workforce/Purchase Count -->
       <div class="col-md-3 h-100">
-        <H3 class="text-center p-2">Workforce</H3>
+        <!-- Workspace -->
+        <div class="mb-5">
+          <H2 class="text-center p-3">Workspace</H2>
+          <div>
+            <h5>Cups of Coffee: <span id=coffeecount>0</span></h5>
+            <h5>Headphone Upgrades: <span id=heaphonecount>0</span></h5>
+            <h5>Chair Upgrades: <span id=chaircount>0</span></h5>
+          </div>
+        </div>
+        <!-- Workforce -->
+        <div>
+          <H2 class="text-center p-3">Workforce</H2>
+          <div>
+            <h5>Magic Pens: <span id=magicpencount>0</span></h5>
+            <h5>Assistant: <span id=assistantcount>0</span></h5>
+            <h5>Ghost Writers: <span id=ghostwritercount>0</span></h5>
+          </div>
+        </div>
       </div>
+      <!-- Beats count, click image, bps -->
       <div class="col-md-6 h-100">
-        <div class="text-center p-2">
+        <!-- Count Text -->
+        <div class="text-center p-3">
           <h2>lofi beats: <span id="beats">0</span></h2>
           <h3>beats per second:</h3>
         </div>
+        <!-- Lofi Girl Image -->
         <div class="my-3">
           <img class="click-img w-100" onClick="mine()" src="assets/lofigirl.gif" alt="lofi girl">
         </div>
-        <div class="text-light bg-dark chatbox">
+        <!-- Chatbox -->
+        <div class="text-light bg-dark">
           <h2 class="card-header text-center">Chatbox</h2>
           <div class="card-body">
-            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis ipsum officia dolor
+            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis ipsum officia
+              dolor
             </p>
           </div>
         </div>
       </div>
+      <!-- Store -->
       <div class="col-md-3 h-100">
-        <H3 class="text-center p-2">Store</H3>
-        <div>
-          <h4>Click Upgrades</h4>
-          <div class="d-grid gap-2 ">
-            <button class="btn btn-lg btn-primary" type="button" onClick="buyClickUpgrade('deluxepen')">
-              Deluxe Pen
-            </button>
-            <button class="btn btn-lg btn-primary" type="button" onClick="buyClickUpgrade('upgradeheadphones')">
-              Upgrade Headphones
-            </button>
-            <button class="btn btn-lg btn-primary" type="button" onClick="buyClickUpgrade('upgradechair')">
-              Comfier Chair
-            </button>
+        <H2 class="text-center p-3">Store</H2>
+        <div class="row d-flex flex-column justify-content-around h-75">
+          <!-- click upgrades -->
+          <div>
+            <h4>Click Upgrades</h4>
+            <div class="d-grid gap-2 ">
+              <!-- coffee -->
+              <button class="btn btn-lg btn-primary" type="button" onClick="buyClickUpgrade('coffee')">
+                <h4 class="m-0">Coffee</h4>
+                <div class="d-flex justify-content-around">
+                  <p class="m-0">Cost: <i class="mdi mdi-music-note"></i>15</p>
+                  <p class="m-0">Bonus: +1</p>
+                </div>
+              </button>
+              <!-- upgrade headphones -->
+              <button class="btn btn-lg btn-primary" type="button" onClick="buyClickUpgrade('upgradeheadphones')">
+                <h4 class="m-0">Upgrade Headphones</h4>
+                <div class="d-flex justify-content-around">
+                  <p class="m-0">Cost: <i class="mdi mdi-music-note"></i>50</p>
+                  <p class="m-0">Bonus: +5</p>
+                </div>
+              </button>
+              <!-- comfier chair -->
+              <button class="btn btn-lg btn-primary" type="button" onClick="buyClickUpgrade('upgradechair')">
+                <h4 class="m-0">Comfier Chair</h4>
+                <div class="d-flex justify-content-around">
+                  <p class="m-0">Cost: <i class="mdi mdi-music-note"></i>100</p>
+                  <p class="m-0">Bonus: +50</p>
+                </div>
+              </button>
+            </div>
+          </div>
+          <!-- auto click upgrades -->
+          <div>
+            <h4>Auto-Click Upgrades</h4>
+            <div class="d-grid gap-2 ">
+              <!-- magic pen -->
+              <button class="btn btn-lg btn-primary" type="button" onClick="buyAutoUpgrade('magicpen')">
+                <h4 class="m-0">Magic Pen</h4>
+                <div class="d-flex justify-content-around">
+                  <p class="m-0">Cost: <i class="mdi mdi-music-note"></i>15</p>
+                  <p class="m-0">+10 lofi beats</p>
+                </div>
+              </button>
+              <!-- assistant -->
+              <button class="btn btn-lg btn-primary" type="button" onClick="buyAutoUpgrade('assistant')">
+                <h4 class="m-0">Assistant</h4>
+                <div class="d-flex justify-content-around">
+                  <p class="m-0">Cost: <i class="mdi mdi-music-note"></i>100</p>
+                  <p class="m-0">+50 lofi beats</p>
+                </div>
+              </button>
+              <!-- ghostwriter -->
+              <button class="btn btn-lg btn-primary" type="button" onClick="buyAutoUpgrade('ghostwriter')">
+                <h4 class="m-0">Ghost Writer</h4>
+                <div class="d-flex justify-content-around">
+                  <p class="m-0">Cost: <i class="mdi mdi-music-note"></i>1000</p>
+                  <p class="m-0">+100 lofi beats</p>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </div>

@@ -1,7 +1,9 @@
 let beats = 0
+let click = 1
+let autoClick = 0
 
 let clickUpgrades = {
-  deluxepen: {
+  coffee: {
     price: 15,
     quantity: 0,
     multiplier: 1
@@ -24,25 +26,20 @@ let automaticUpgrades = {
     quantity: 0,
     multiplier: 10
   },
-  coffee: {
+  assistant: {
     price: 100,
     quantity: 0,
     multiplier: 50
   },
-  assistant: {
+  ghostwriter: {
     price: 1000,
     quantity: 0,
     multiplier: 100
-  },
-  ghostwriter: {
-    price: 10000,
-    quantity: 0,
-    multiplier: 1000
   }
 };
 
 function mine() {
-  beats++
+  beats += click
   update()
 }
 
@@ -52,9 +49,23 @@ function update() {
 
 function buyClickUpgrade(item) {
   let cost = clickUpgrades[item].price
-  let count = clickUpgrades[item].quantity
+  let amount = clickUpgrades[item].quantity
+  let bonus = clickUpgrades[item].multiplier
   if (beats >= cost) {
-    count++
+    amount++
+    click += bonus
+    beats -= cost
+  }
+  update()
+}
+
+function buyAutoUpgrade(item) {
+  let cost = automaticUpgrades[item].price
+  let amount = automaticUpgrades[item].quantity
+  let bonus = automaticUpgrades[item].multiplier
+  if (beats >= cost) {
+    amount++
+    autoClick += bonus
     beats -= cost
   }
   update()
