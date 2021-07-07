@@ -1,6 +1,7 @@
 let beats = 0
 let click = 1
 let autoClick = 0
+let amount = 0
 
 let clickUpgrades = {
   coffee: {
