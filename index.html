@@ -34,9 +34,9 @@
         <div>
           <H2 class="text-center p-3">Workforce</H2>
           <div>
-            <h5>Magic Pens: <span id=magicpencount>0</span></h5>
-            <h5>Assistant: <span id=assistantcount>0</span></h5>
-            <h5>Ghost Writers: <span id=ghostwritercount>0</span></h5>
+            <h5>Magic Pens: <span id=magicPen>0</span></h5>
+            <h5>Assistant: <span id=assistant>0</span></h5>
+            <h5>Ghost Writers: <span id=ghostWriter>0</span></h5>
           </div>
         </div>
       </div>
@@ -82,7 +82,7 @@
               <button class="btn btn-lg btn-primary" type="button" onClick="buyClickUpgrade('upgradeHeadphones')">
                 <h4 class="m-0">Upgrade Headphones</h4>
                 <div class="d-flex justify-content-around">
-                  <p class="m-0">Cost: <i class="mdi mdi-music-note"></i>50</p>
+                  <p class="m-0">Cost: <i class="mdi mdi-music-note"></i>100</p>
                   <p class="m-0">Bonus: +5</p>
                 </div>
               </button>
@@ -90,7 +90,7 @@
               <button class="btn btn-lg btn-primary" type="button" onClick="buyClickUpgrade('upgradeChair')">
                 <h4 class="m-0">Comfier Chair</h4>
                 <div class="d-flex justify-content-around">
-                  <p class="m-0">Cost: <i class="mdi mdi-music-note"></i>100</p>
+                  <p class="m-0">Cost: <i class="mdi mdi-music-note"></i>1000</p>
                   <p class="m-0">Bonus: +50</p>
                 </div>
               </button>
@@ -101,7 +101,7 @@
             <h4>Auto-Click Upgrades</h4>
             <div class="d-grid gap-2 ">
               <!-- magic pen -->
-              <button class="btn btn-lg btn-primary" type="button" onClick="buyAutoUpgrade('magicpen')">
+              <button class="btn btn-lg btn-primary" type="button" onClick="buyAutoUpgrade('magicPen')">
                 <h4 class="m-0">Magic Pen</h4>
                 <div class="d-flex justify-content-around">
                   <p class="m-0">Cost: <i class="mdi mdi-music-note"></i>15</p>
@@ -117,7 +117,7 @@
                 </div>
               </button>
               <!-- ghostwriter -->
-              <button class="btn btn-lg btn-primary" type="button" onClick="buyAutoUpgrade('ghostwriter')">
+              <button class="btn btn-lg btn-primary" type="button" onClick="buyAutoUpgrade('ghostWriter')">
                 <h4 class="m-0">Ghost Writer</h4>
                 <div class="d-flex justify-content-around">
                   <p class="m-0">Cost: <i class="mdi mdi-music-note"></i>1000</p>

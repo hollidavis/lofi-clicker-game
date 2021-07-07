@@ -9,19 +9,19 @@ let clickUpgrades = {
     multiplier: 1
   },
   upgradeHeadphones: {
-    price: 50,
+    price: 100,
     quantity: 0,
     multiplier: 5
   },
   upgradeChair: {
-    price: 100,
+    price: 1000,
     quantity: 0,
     multiplier: 50
   },
 };
 
 let automaticUpgrades = {
-  magicpen: {
+  magicPen: {
     price: 15,
     quantity: 0,
     multiplier: 10
@@ -31,7 +31,7 @@ let automaticUpgrades = {
     quantity: 0,
     multiplier: 50
   },
-  ghostwriter: {
+  ghostWriter: {
     price: 1000,
     quantity: 0,
     multiplier: 100
@@ -50,27 +50,33 @@ function buyClickUpgrade(item) {
     beats -= clickUpgrades[item].price
   }
   update()
-  drawCount(item)
+  drawClickCount(item)
 }
 
 function buyAutoUpgrade(item) {
-  let cost = automaticUpgrades[item].price
-  let bonus = automaticUpgrades[item].multiplier
-  if (beats >= cost) {
+  if (beats >= automaticUpgrades[item].price) {
     automaticUpgrades[item].quantity++
-    autoClick += bonus
-    beats -= cost
+    autoClick += automaticUpgrades[item].multiplier
+    beats -= automaticUpgrades[item].price
   }
   update()
+  drawAutoCount(item)
 }
 
 function update() {
   document.getElementById('beats').innerText = beats.toString()
   document.getElementById('clicks').innerText = click.toString()
-  document.getElementById('clicks').innerText = autoClick.toString()
+  document.getElementById('autoClicks').innerText = autoClick.toString()
 }
 
-function drawCount(id) {
+function drawClickCount(id) {
   let count = clickUpgrades[id].quantity
   document.getElementById(id).innerText = count.toString()
 }
+
+function drawAutoCount(id) {
+  let autoCount = automaticUpgrades[id].quantity
+  document.getElementById(id).innerText = autoCount.toString()
+}
+
+function drawClickCost()
