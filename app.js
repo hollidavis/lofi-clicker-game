@@ -1,7 +1,6 @@
 let beats = 0
 let click = 1
 let autoClick = 0
-let amount = 0
 
 let clickUpgrades = {
   coffee: {
@@ -9,12 +8,12 @@ let clickUpgrades = {
     quantity: 0,
     multiplier: 1
   },
-  upgradeheadphones: {
+  upgradeHeadphones: {
     price: 50,
     quantity: 0,
     multiplier: 5
   },
-  upgradechair: {
+  upgradeChair: {
     price: 100,
     quantity: 0,
     multiplier: 50
@@ -44,30 +43,34 @@ function mine() {
   update()
 }
 
-function update() {
-  document.getElementById('beats').innerText = beats.toString()
-}
-
 function buyClickUpgrade(item) {
-  let cost = clickUpgrades[item].price
-  let amount = clickUpgrades[item].quantity
-  let bonus = clickUpgrades[item].multiplier
-  if (beats >= cost) {
-    amount++
-    click += bonus
-    beats -= cost
+  if (beats >= clickUpgrades[item].price) {
+    clickUpgrades[item].quantity++
+    click += clickUpgrades[item].multiplier
+    beats -= clickUpgrades[item].price
   }
   update()
+  drawCount(item)
 }
 
 function buyAutoUpgrade(item) {
   let cost = automaticUpgrades[item].price
-  let amount = automaticUpgrades[item].quantity
   let bonus = automaticUpgrades[item].multiplier
   if (beats >= cost) {
-    amount++
+    automaticUpgrades[item].quantity++
     autoClick += bonus
     beats -= cost
   }
   update()
+}
+
+function update() {
+  document.getElementById('beats').innerText = beats.toString()
+  document.getElementById('clicks').innerText = click.toString()
+  document.getElementById('clicks').innerText = autoClick.toString()
+}
+
+function drawCount(id) {
+  let count = clickUpgrades[id].quantity
+  document.getElementById(id).innerText = count.toString()
 }
