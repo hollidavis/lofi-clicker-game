@@ -48,6 +48,7 @@ function buyClickUpgrade(item) {
     clickUpgrades[item].quantity++
     click += clickUpgrades[item].multiplier
     beats -= clickUpgrades[item].price
+    drawClickCost(item)
   }
   update()
   drawClickCount(item)
@@ -58,8 +59,10 @@ function buyAutoUpgrade(item) {
     automaticUpgrades[item].quantity++
     autoClick += automaticUpgrades[item].multiplier
     beats -= automaticUpgrades[item].price
+    drawAutoCost(item)
   }
   update()
+  collectAutoUpgrades()
   drawAutoCount(item)
 }
 
@@ -79,4 +82,23 @@ function drawAutoCount(id) {
   document.getElementById(id).innerText = autoCount.toString()
 }
 
-function drawClickCost()
+function drawClickCost(item) {
+  clickUpgrades[item].price *= 2
+  document.getElementById(item + 'Cost').innerText = clickUpgrades[item].price.toString()
+  console.log(clickUpgrades[item].price)
+}
+
+function drawAutoCost(item) {
+  automaticUpgrades[item].price *= 2
+  document.getElementById(item + 'Cost').innerText = automaticUpgrades[item].price.toString()
+  console.log(automaticUpgrades[item].price)
+}
+
+function startInterval() {
+  // collectionInterval = (do I need??)
+  setInterval(collectAutoUpgrades, 1000);
+}
+
+function collectAutoUpgrades() {
+
+}
