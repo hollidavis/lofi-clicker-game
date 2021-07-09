@@ -60,9 +60,9 @@ function buyAutoUpgrade(item) {
     autoClick += automaticUpgrades[item].multiplier
     beats -= automaticUpgrades[item].price
     drawAutoCost(item)
+    startInterval()
   }
   update()
-  collectAutoUpgrades()
   drawAutoCount(item)
 }
 
@@ -85,13 +85,11 @@ function drawAutoCount(id) {
 function drawClickCost(item) {
   clickUpgrades[item].price *= 2
   document.getElementById(item + 'Cost').innerText = clickUpgrades[item].price.toString()
-  console.log(clickUpgrades[item].price)
 }
 
 function drawAutoCost(item) {
   automaticUpgrades[item].price *= 2
   document.getElementById(item + 'Cost').innerText = automaticUpgrades[item].price.toString()
-  console.log(automaticUpgrades[item].price)
 }
 
 function startInterval() {
@@ -100,5 +98,6 @@ function startInterval() {
 }
 
 function collectAutoUpgrades() {
-
+  let thingy = automaticUpgrades.magicPen.quantity * automaticUpgrades.magicPen.multiplier
+  beats += thingy
 }
