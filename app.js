@@ -60,7 +60,6 @@ function buyAutoUpgrade(item) {
     autoClick += automaticUpgrades[item].multiplier
     beats -= automaticUpgrades[item].price
     drawAutoCost(item)
-    startInterval()
   }
   update()
   drawAutoCount(item)
@@ -104,3 +103,5 @@ function collectAutoUpgrades() {
   autoClick = (magicPenTotal + assistantTotal + ghostWriterTotal)
   update()
 }
+
+startInterval()
