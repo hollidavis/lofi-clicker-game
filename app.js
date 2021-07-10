@@ -93,11 +93,14 @@ function drawAutoCost(item) {
 }
 
 function startInterval() {
-  // collectionInterval = (do I need??)
   setInterval(collectAutoUpgrades, 1000);
 }
 
 function collectAutoUpgrades() {
-  let thingy = automaticUpgrades.magicPen.quantity * automaticUpgrades.magicPen.multiplier
-  beats += thingy
+  let magicPenTotal = automaticUpgrades.magicPen.multiplier * automaticUpgrades.magicPen.quantity
+  let assistantTotal = automaticUpgrades.assistant.multiplier * automaticUpgrades.assistant.quantity
+  let ghostWriterTotal = automaticUpgrades.ghostWriter.multiplier * automaticUpgrades.ghostWriter.quantity
+  beats += (magicPenTotal + assistantTotal + ghostWriterTotal)
+  autoClick = (magicPenTotal + assistantTotal + ghostWriterTotal)
+  update()
 }
