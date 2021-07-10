@@ -11,13 +11,8 @@ header {
 
 main {
   flex-grow: 1;
-  height: 90vh;
+  height: 80vh;
 }
-
-.bg-light-grey{
-  background-color: #ebebeb
-}
-
-.chatbox{
-  height: 20%;
+footer{
+  height: 10vh;
 }
